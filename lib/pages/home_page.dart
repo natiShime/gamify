@@ -13,10 +13,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double? _deviceHeight;
   double? _devicewidth;
-
+  var _selectedGame = 0;
   @override
   void initState() {
     super.initState();
+    _selectedGame = 0;
   }
 
   @override
@@ -39,6 +40,11 @@ class _HomePageState extends State<HomePage> {
       height: _deviceHeight! * 0.50,
       width: _devicewidth,
       child: PageView(
+        onPageChanged: (index) {
+          setState(() {
+            _selectedGame = index;
+          });
+        },
         scrollDirection: Axis.horizontal,
         children:
             featuredGames.map((game) {
@@ -77,13 +83,17 @@ class _HomePageState extends State<HomePage> {
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: _devicewidth! * 0.05,
-        vertical: _deviceHeight! * 0.05,
+        vertical: _deviceHeight! * 0.005,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[_topBarwidget()],
+        children: <Widget>[
+          _topBarwidget(),
+          SizedBox(height: _deviceHeight! * 0.15),
+          _featuredGamesInfoWidget(),
+        ],
       ),
     );
   }
@@ -104,6 +114,50 @@ class _HomePageState extends State<HomePage> {
               SizedBox(width: _devicewidth! * 0.03),
               Icon(Icons.notifications, color: Colors.white, size: 30),
             ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _featuredGamesInfoWidget() {
+    return SizedBox(
+      height: _deviceHeight! * 0.12,
+      width: _devicewidth,
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            featuredGames[_selectedGame].title,
+            maxLines: 2,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: _deviceHeight! * 0.043,
+            ),
+          ),
+          SizedBox(height: _deviceHeight! * 0.01),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+
+            children:
+                featuredGames.map((game) {
+                  bool isActive =
+                      game.title == featuredGames[_selectedGame].title;
+                  double circleRadius = _deviceHeight! * 0.004;
+                  return Container(
+                    margin: EdgeInsets.only(right: _devicewidth! * 0.015),
+                    height: circleRadius * 2,
+                    width: circleRadius * 2,
+                    decoration: BoxDecoration(
+                      color: isActive ? Colors.green : Colors.grey,
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                  );
+                }).toList(),
           ),
         ],
       ),
