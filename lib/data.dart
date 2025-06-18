@@ -112,7 +112,7 @@ List<Game> featuredGames = [
   Game(
     "Dragon Ball Z: Kakarot",
     GameImage(
-      "https://cdn3.dualshockers.com/wp-content/uploads/2020/01/dbx-kakarot.png",
+      "https://static.wikia.nocookie.net/dragonball/images/c/c0/DBZ_Kakarot_Box_Art.jpg/revision/latest?cb=20230520144144",
       "",
     ),
     "",
