@@ -46,7 +46,7 @@ List<Game> games = [
   Game(
     "Resident Evil 2",
     GameImage(
-      "https://media.playstation.com/is/image/SCEA/resident-evil-2-box-art-01-ps4-us-12dec18?\$native_nt\$",
+      "https://i.etsystatic.com/12175780/r/il/19fc5a/1532651946/il_1588xN.1532651946_9fb5.jpg",
       "",
     ),
     "",
