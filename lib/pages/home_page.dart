@@ -94,11 +94,14 @@ class _HomePageState extends State<HomePage> {
           _topBarwidget(),
           SizedBox(height: _deviceHeight! * 0.15),
           _featuredGamesInfoWidget(),
-          ScrollableGamesWidget(
-            games,
-            _deviceHeight! * 0.24,
-            true,
-            _devicewidth!,
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: _deviceHeight! * 0.01),
+            child: ScrollableGamesWidget(
+              games,
+              _deviceHeight! * 0.24,
+              true,
+              _devicewidth!,
+            ),
           ),
         ],
       ),
