@@ -4,6 +4,7 @@ import '../data.dart';
 class ScrollableGamesWidget extends StatelessWidget {
   final double _height;
   final double _width;
+  // ignore: unused_field
   final bool _showTitle;
 
   final List<Game> _gamesData;

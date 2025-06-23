@@ -103,6 +103,7 @@ class _HomePageState extends State<HomePage> {
               _devicewidth!,
             ),
           ),
+          _featuredGamebannerWidget(),
         ],
       ),
     );
@@ -170,6 +171,20 @@ class _HomePageState extends State<HomePage> {
                 }).toList(),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _featuredGamebannerWidget() {
+    return Container(
+      height: _deviceHeight! * 0.13,
+      width: _devicewidth,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: NetworkImage(featuredGames[3].coverImage.url),
+        ),
       ),
     );
   }
