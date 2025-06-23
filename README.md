@@ -24,5 +24,6 @@ This project was built to understand:
 
 ## Screenshots 📱
 
-![App Screenshot](/assets/images/app_screenshot.jpg)
+![App Screenshot](/assets/images/app_Screenshot.jpg)
+
 **Thanks for checking out my project!** Feedback and contributions are welcome.
