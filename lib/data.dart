@@ -19,7 +19,7 @@ List<Game> games = [
   Game(
     "Horizon Zero Dawn",
     GameImage(
-      "https://www.wallpaperflare.com/static/734/272/885/horizon-zero-dawn-playstation-4-logo-aloy-horizon-zero-dawn-wallpaper.jpg",
+      "https://upload.wikimedia.org/wikipedia/en/9/93/Horizon_Zero_Dawn.jpg",
       "",
     ),
     "",
@@ -85,7 +85,7 @@ List<Game> games2 = [
   Game(
     "Just Cause 4",
     GameImage(
-      "https://s3.gaming-cdn.com/images/products/2666/orig/just-cause-4-cover.jpg",
+      "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQGbXR3wc2KA8vgcdE-n1my2fxQOXu5CurUVx6A5bw0ln342sMD",
       "",
     ),
     "",
